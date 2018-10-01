@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using mon_f2018.Models;
 
 namespace mon_f2018.Controllers
-{
+{[Authorize]
     public class AlbumsController : Controller
     {
         // automatically connects to the database
