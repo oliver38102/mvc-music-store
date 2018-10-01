@@ -9,7 +9,8 @@ using System.Web.Mvc;
 using mon_f2018.Models;
 
 namespace mon_f2018.Controllers
-{[Authorize]
+{
+    [Authorize]
     public class AlbumsController : Controller
     {
         // automatically connects to the database
@@ -21,7 +22,7 @@ namespace mon_f2018.Controllers
             var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
             return View(albums.OrderBy(a => a.Artist.Name).ThenBy(a => a.Title).ToList());
         }
-
+        [AllowAnonymous]
         // GET: Albums/Details/5
         public ActionResult Details(int? id)
         {

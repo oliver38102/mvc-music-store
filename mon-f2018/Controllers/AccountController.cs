@@ -12,7 +12,7 @@ using mon_f2018.Models;
 
 namespace mon_f2018.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
